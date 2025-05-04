@@ -1,40 +1,86 @@
 (async () => {
-    const response = await fetch("https://turo.com/api/fleet/calendar", {
-      method: "POST",
+  try {
+    const res = await fetch("https://turo.com/api/v2/feeds/upcoming-trips?appMode=HOST", {
+      credentials: "include",
       headers: {
         "Content-Type": "application/json"
-      },
-      body: JSON.stringify({
-        daysPerPage: 31,
-        includeVehicleDetails: true,
-        startDate: new Date().toISOString().split("T")[0],
-        vehicleIds: [3087894] // You can automate this for all user vehicles
-      })
+      }
     });
-  
-    const data = await response.json();
-  
-    window.__turoCalendarData = Array.isArray(data.fleetCalendar)
-      ? data.fleetCalendar.map(vehicle => {
-          const events = [];
-  
-          vehicle.dailyData.forEach(day => {
-            (day.unavailabilities || []).forEach(u => {
-              events.push({
-                summary: `${vehicle.vehicleDetails.name} - Reserved`,
-                start: `${day.date}T${u.start?.time || "00:00"}:00`,
-                end: `${day.date}T${u.end?.time || "23:59"}:00`,
-                timeZone: vehicle.vehicleDetails.vehicleTimeZone
-              });
-            });
-          });
-  
-          return {
-            vehicleId: vehicle.vehicleDetails.id,
-            vehicleName: vehicle.vehicleDetails.name,
-            events
+
+    if (!res.ok) {
+      console.error("❌ Failed to fetch upcoming trips:", res.statusText);
+      window.__turoCalendarData = [];
+      return;
+    }
+
+    const data = await res.json();
+    const trips = data.upcomingTripItems || [];
+
+    // ✅ Filter unique reservations: keep only trip start events
+    const uniqueTrips = [];
+    const seen = new Set();
+
+    for (const item of trips) {
+      if (
+        item.upcomingTripFeedItemType === "OWNER_TRIP_START" &&
+        !seen.has(item.reservationId)
+      ) {
+        seen.add(item.reservationId);
+        uniqueTrips.push(item);
+      }
+    }
+
+    function buildCalendarEventsFromTrips(trips) {
+      const byVehicle = {};
+
+      trips.forEach(trip => {
+        const vehicleId = trip.vehicle.id;
+        const guestName = trip.actor?.name || "Guest";
+        const startISO = new Date(trip.interval.start.epochMillis).toISOString();
+        const endISO = new Date(trip.interval.end.epochMillis).toISOString();
+        const timeZone = trip.timeZone || "America/Los_Angeles";
+        const address = trip.address || "Pickup location unavailable";
+        const mapLink = `https://maps.google.com/?q=${encodeURIComponent(address)}`;
+        const event = {
+          summary: `${guestName} - Reserved`,
+          location: address,
+          description: `Reservation ID: ${trip.reservationId}
+Guest: ${guestName}
+Vehicle: ${trip.vehicle.make} ${trip.vehicle.model}
+License Plate: ${trip.vehicle.registration?.licensePlate || "N/A"}
+Pickup Location: ${address}
+Map: ${mapLink}
+Trip URL: https://turo.com/us/en/trips/${trip.reservationId}`,
+
+          start: {
+            dateTime: startISO,
+            timeZone: timeZone
+          },
+          end: {
+            dateTime: endISO,
+            timeZone: timeZone
+          }
+        };
+
+        if (!byVehicle[vehicleId]) {
+          byVehicle[vehicleId] = {
+            vehicleId,
+            vehicleName: trip.vehicle.name || `${trip.vehicle.make} ${trip.vehicle.model}`,
+            events: []
           };
-        })
-      : [];
-  })();
-  
+        }
+
+        byVehicle[vehicleId].events.push(event);
+      });
+
+      return Object.values(byVehicle);
+    }
+
+    const enriched = buildCalendarEventsFromTrips(uniqueTrips);
+    window.__turoCalendarData = enriched;
+    console.log("✅ __turoCalendarData is ready", enriched);
+  } catch (err) {
+    console.error("🚨 Error processing upcoming trips:", err);
+    window.__turoCalendarData = [];
+  }
+})();
