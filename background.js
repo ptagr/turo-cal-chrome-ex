@@ -15,27 +15,28 @@ chrome.runtime.onMessage.addListener(async (message, sender, sendResponse) => {
     let colorIndex = 1;
     const availableColors = [2, 3, 5, 6, 7, 9, 10, 11];
 
-    for (const vehicle of calendarData) {
+    for (const vehicleWrapper of calendarData) {
+      const { vehicleName, vehicle } = vehicleWrapper;
       const calendarColor = availableColors[colorIndex % availableColors.length];
       colorIndex++;
 
-      console.log(`🚗 Processing vehicle: ${vehicle.vehicleName}`);
+      console.log(`🚗 Processing vehicle: ${vehicleName}`);
       const calendarId = await getOrCreateCalendar(vehicle, token, calendarColor);
 
       console.log(`🧹 Clearing events for calendar: ${calendarId}`);
       await clearCalendarEvents(calendarId, token);
 
-      if (!vehicle.events || vehicle.events.length === 0) {
-        console.warn(`⚠️ No events found for ${vehicle.vehicleName}`);
+      if (!vehicleWrapper.events || vehicleWrapper.events.length === 0) {
+        console.warn(`⚠️ No events found for ${vehicleName}`);
       }
 
-      for (const event of vehicle.events) {
+      for (const event of vehicleWrapper.events) {
         console.log(`🗓 Adding event: ${event.summary} from ${event.start.dateTime} to ${event.end.dateTime}`);
         await addEventToCalendar(calendarId, event, token);
       }
 
       const link = `https://calendar.google.com/calendar/embed?src=${encodeURIComponent(calendarId)}`;
-      calendarLinks.push({ vehicleName: vehicle.vehicleName, url: link });
+      calendarLinks.push({ vehicleName, url: link });
     }
 
     console.log("✅ Sync complete. Sending calendar links to popup:", calendarLinks);
@@ -56,8 +57,8 @@ function getAuthToken() {
 }
 
 async function getOrCreateCalendar(vehicle, token, colorId) {
-  const vinSuffix = vehicle.vin?.slice(-5) || vehicle.vehicleId;
-  const summary = `${vehicle.vehicleName} - ${vinSuffix}`;
+  const vinSuffix = vehicle.vin?.slice(-5) || vehicle.id;
+  const summary = `${vehicle.make} ${vehicle.model} ${vehicle.year} - ${vinSuffix}`;
 
   const existing = await findCalendarBySummary(summary, token);
   if (existing) {
@@ -85,7 +86,7 @@ async function getOrCreateCalendar(vehicle, token, colorId) {
     body: JSON.stringify({ colorId: String(colorId) })
   });
 
-  await makeCalendarPublic(data.id, token);
+  // await makeCalendarPublic(data.id, token);
   return data.id;
 }
 
@@ -173,6 +174,5 @@ async function clearCalendarEvents(calendarId, token) {
     } while (pageToken);
   } catch (err) {
     console.error("Error in clearCalendarEvents:", err.message || err);
-    return;
   }
 }

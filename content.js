@@ -41,30 +41,31 @@
         const timeZone = trip.timeZone || "America/Los_Angeles";
         const address = trip.address || "Pickup location unavailable";
         const mapLink = `https://maps.google.com/?q=${encodeURIComponent(address)}`;
+
         const event = {
           summary: `${guestName} - Reserved`,
           location: address,
           description: `Reservation ID: ${trip.reservationId}
 Guest: ${guestName}
-Vehicle: ${trip.vehicle.make} ${trip.vehicle.model}
+Vehicle: ${trip.vehicle.make} ${trip.vehicle.model} ${trip.vehicle.year} - ${trip.vehicle.vin?.slice(-5) || trip.vehicle.id}
 License Plate: ${trip.vehicle.registration?.licensePlate || "N/A"}
 Pickup Location: ${address}
 Map: ${mapLink}
 Trip URL: https://turo.com/us/en/trips/${trip.reservationId}`,
-
           start: {
             dateTime: startISO,
-            timeZone: timeZone
+            timeZone
           },
           end: {
             dateTime: endISO,
-            timeZone: timeZone
+            timeZone
           }
         };
 
         if (!byVehicle[vehicleId]) {
           byVehicle[vehicleId] = {
             vehicleId,
+            vehicle: trip.vehicle, // ✅ include full vehicle object
             vehicleName: trip.vehicle.name || `${trip.vehicle.make} ${trip.vehicle.model}`,
             events: []
           };
