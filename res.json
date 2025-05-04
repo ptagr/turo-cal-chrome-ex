@@ -1,0 +1,717 @@
+{
+    "fleetCalendar": [
+        {
+            "dailyData": [
+                {
+                    "date": "2025-05-01",
+                    "price": {
+                        "price": {
+                            "amount": 56.00,
+                            "currencyCode": "USD"
+                        },
+                        "source": "DYNAMIC"
+                    },
+                    "priceEditable": true,
+                    "unavailabilities": []
+                },
+                {
+                    "date": "2025-05-02",
+                    "price": {
+                        "price": {
+                            "amount": 68.00,
+                            "currencyCode": "USD"
+                        },
+                        "source": "DYNAMIC"
+                    },
+                    "priceEditable": true,
+                    "unavailabilities": []
+                },
+                {
+                    "date": "2025-05-03",
+                    "price": {
+                        "price": {
+                            "amount": 73.00,
+                            "currencyCode": "USD"
+                        },
+                        "source": "DYNAMIC"
+                    },
+                    "priceEditable": true,
+                    "unavailabilities": []
+                },
+                {
+                    "date": "2025-05-04",
+                    "price": {
+                        "price": {
+                            "amount": 66.00,
+                            "currencyCode": "USD"
+                        },
+                        "source": "DYNAMIC"
+                    },
+                    "priceEditable": true,
+                    "unavailabilities": []
+                },
+                {
+                    "date": "2025-05-05",
+                    "price": {
+                        "price": {
+                            "amount": 54.00,
+                            "currencyCode": "USD"
+                        },
+                        "source": "DYNAMIC"
+                    },
+                    "priceEditable": true,
+                    "unavailabilities": []
+                },
+                {
+                    "date": "2025-05-06",
+                    "price": {
+                        "price": {
+                            "amount": 54.00,
+                            "currencyCode": "USD"
+                        },
+                        "source": "DYNAMIC"
+                    },
+                    "priceEditable": true,
+                    "unavailabilities": []
+                },
+                {
+                    "date": "2025-05-07",
+                    "price": {
+                        "price": {
+                            "amount": 55.00,
+                            "currencyCode": "USD"
+                        },
+                        "source": "DYNAMIC"
+                    },
+                    "priceEditable": true,
+                    "unavailabilities": []
+                },
+                {
+                    "date": "2025-05-08",
+                    "price": {
+                        "price": {
+                            "amount": 59.00,
+                            "currencyCode": "USD"
+                        },
+                        "source": "DYNAMIC"
+                    },
+                    "priceEditable": true,
+                    "unavailabilities": []
+                },
+                {
+                    "date": "2025-05-09",
+                    "defaultPrice": {
+                        "price": {
+                            "amount": 69.00,
+                            "currencyCode": "USD"
+                        },
+                        "source": "DYNAMIC"
+                    },
+                    "price": {
+                        "price": {
+                            "amount": 69.00,
+                            "currencyCode": "USD"
+                        },
+                        "source": "OWNER"
+                    },
+                    "priceEditable": true,
+                    "unavailabilities": [
+                        {
+                            "end": {
+                                "terminal": false,
+                                "time": "23:59"
+                            },
+                            "id": 43714544,
+                            "reservationStatus": "APPROVED",
+                            "start": {
+                                "terminal": true,
+                                "time": "13:00"
+                            },
+                            "unavailabilityReason": "RESERVATION"
+                        }
+                    ]
+                },
+                {
+                    "date": "2025-05-10",
+                    "defaultPrice": {
+                        "price": {
+                            "amount": 74.00,
+                            "currencyCode": "USD"
+                        },
+                        "source": "DYNAMIC"
+                    },
+                    "price": {
+                        "price": {
+                            "amount": 74.00,
+                            "currencyCode": "USD"
+                        },
+                        "source": "OWNER"
+                    },
+                    "priceEditable": false,
+                    "unavailabilities": [
+                        {
+                            "end": {
+                                "terminal": false,
+                                "time": "23:59"
+                            },
+                            "id": 43714544,
+                            "reservationStatus": "APPROVED",
+                            "start": {
+                                "terminal": false,
+                                "time": "00:00"
+                            },
+                            "unavailabilityReason": "RESERVATION"
+                        }
+                    ]
+                },
+                {
+                    "date": "2025-05-11",
+                    "defaultPrice": {
+                        "price": {
+                            "amount": 67.00,
+                            "currencyCode": "USD"
+                        },
+                        "source": "DYNAMIC"
+                    },
+                    "price": {
+                        "price": {
+                            "amount": 67.00,
+                            "currencyCode": "USD"
+                        },
+                        "source": "OWNER"
+                    },
+                    "priceEditable": false,
+                    "unavailabilities": [
+                        {
+                            "end": {
+                                "terminal": false,
+                                "time": "23:59"
+                            },
+                            "id": 43714544,
+                            "reservationStatus": "APPROVED",
+                            "start": {
+                                "terminal": false,
+                                "time": "00:00"
+                            },
+                            "unavailabilityReason": "RESERVATION"
+                        }
+                    ]
+                },
+                {
+                    "date": "2025-05-12",
+                    "defaultPrice": {
+                        "price": {
+                            "amount": 56.00,
+                            "currencyCode": "USD"
+                        },
+                        "source": "DYNAMIC"
+                    },
+                    "price": {
+                        "price": {
+                            "amount": 56.00,
+                            "currencyCode": "USD"
+                        },
+                        "source": "OWNER"
+                    },
+                    "priceEditable": true,
+                    "unavailabilities": [
+                        {
+                            "end": {
+                                "terminal": true,
+                                "time": "11:00"
+                            },
+                            "id": 43714544,
+                            "reservationStatus": "APPROVED",
+                            "start": {
+                                "terminal": false,
+                                "time": "00:00"
+                            },
+                            "unavailabilityReason": "RESERVATION"
+                        }
+                    ]
+                },
+                {
+                    "date": "2025-05-13",
+                    "price": {
+                        "price": {
+                            "amount": 57.00,
+                            "currencyCode": "USD"
+                        },
+                        "source": "DYNAMIC"
+                    },
+                    "priceEditable": true,
+                    "unavailabilities": []
+                },
+                {
+                    "date": "2025-05-14",
+                    "price": {
+                        "price": {
+                            "amount": 59.00,
+                            "currencyCode": "USD"
+                        },
+                        "source": "DYNAMIC"
+                    },
+                    "priceEditable": true,
+                    "unavailabilities": []
+                },
+                {
+                    "date": "2025-05-15",
+                    "price": {
+                        "price": {
+                            "amount": 65.00,
+                            "currencyCode": "USD"
+                        },
+                        "source": "DYNAMIC"
+                    },
+                    "priceEditable": true,
+                    "unavailabilities": []
+                },
+                {
+                    "date": "2025-05-16",
+                    "defaultPrice": {
+                        "price": {
+                            "amount": 79.00,
+                            "currencyCode": "USD"
+                        },
+                        "source": "DYNAMIC"
+                    },
+                    "price": {
+                        "price": {
+                            "amount": 79.00,
+                            "currencyCode": "USD"
+                        },
+                        "source": "OWNER"
+                    },
+                    "priceEditable": true,
+                    "unavailabilities": [
+                        {
+                            "end": {
+                                "terminal": false,
+                                "time": "23:59"
+                            },
+                            "id": 43762620,
+                            "reservationStatus": "APPROVED",
+                            "start": {
+                                "terminal": true,
+                                "time": "09:30"
+                            },
+                            "unavailabilityReason": "RESERVATION"
+                        }
+                    ]
+                },
+                {
+                    "date": "2025-05-17",
+                    "defaultPrice": {
+                        "price": {
+                            "amount": 85.00,
+                            "currencyCode": "USD"
+                        },
+                        "source": "DYNAMIC"
+                    },
+                    "price": {
+                        "price": {
+                            "amount": 85.00,
+                            "currencyCode": "USD"
+                        },
+                        "source": "OWNER"
+                    },
+                    "priceEditable": false,
+                    "unavailabilities": [
+                        {
+                            "end": {
+                                "terminal": false,
+                                "time": "23:59"
+                            },
+                            "id": 43762620,
+                            "reservationStatus": "APPROVED",
+                            "start": {
+                                "terminal": false,
+                                "time": "00:00"
+                            },
+                            "unavailabilityReason": "RESERVATION"
+                        }
+                    ]
+                },
+                {
+                    "date": "2025-05-18",
+                    "defaultPrice": {
+                        "price": {
+                            "amount": 77.00,
+                            "currencyCode": "USD"
+                        },
+                        "source": "DYNAMIC"
+                    },
+                    "price": {
+                        "price": {
+                            "amount": 77.00,
+                            "currencyCode": "USD"
+                        },
+                        "source": "OWNER"
+                    },
+                    "priceEditable": false,
+                    "unavailabilities": [
+                        {
+                            "end": {
+                                "terminal": false,
+                                "time": "23:59"
+                            },
+                            "id": 43762620,
+                            "reservationStatus": "APPROVED",
+                            "start": {
+                                "terminal": false,
+                                "time": "00:00"
+                            },
+                            "unavailabilityReason": "RESERVATION"
+                        }
+                    ]
+                },
+                {
+                    "date": "2025-05-19",
+                    "defaultPrice": {
+                        "price": {
+                            "amount": 62.00,
+                            "currencyCode": "USD"
+                        },
+                        "source": "DYNAMIC"
+                    },
+                    "price": {
+                        "price": {
+                            "amount": 62.00,
+                            "currencyCode": "USD"
+                        },
+                        "source": "OWNER"
+                    },
+                    "priceEditable": false,
+                    "unavailabilities": [
+                        {
+                            "end": {
+                                "terminal": false,
+                                "time": "23:59"
+                            },
+                            "id": 43762620,
+                            "reservationStatus": "APPROVED",
+                            "start": {
+                                "terminal": false,
+                                "time": "00:00"
+                            },
+                            "unavailabilityReason": "RESERVATION"
+                        }
+                    ]
+                },
+                {
+                    "date": "2025-05-20",
+                    "defaultPrice": {
+                        "price": {
+                            "amount": 61.00,
+                            "currencyCode": "USD"
+                        },
+                        "source": "DYNAMIC"
+                    },
+                    "price": {
+                        "price": {
+                            "amount": 61.00,
+                            "currencyCode": "USD"
+                        },
+                        "source": "OWNER"
+                    },
+                    "priceEditable": false,
+                    "unavailabilities": [
+                        {
+                            "end": {
+                                "terminal": false,
+                                "time": "23:59"
+                            },
+                            "id": 43762620,
+                            "reservationStatus": "APPROVED",
+                            "start": {
+                                "terminal": false,
+                                "time": "00:00"
+                            },
+                            "unavailabilityReason": "RESERVATION"
+                        }
+                    ]
+                },
+                {
+                    "date": "2025-05-21",
+                    "defaultPrice": {
+                        "price": {
+                            "amount": 62.00,
+                            "currencyCode": "USD"
+                        },
+                        "source": "DYNAMIC"
+                    },
+                    "price": {
+                        "price": {
+                            "amount": 62.00,
+                            "currencyCode": "USD"
+                        },
+                        "source": "OWNER"
+                    },
+                    "priceEditable": false,
+                    "unavailabilities": [
+                        {
+                            "end": {
+                                "terminal": false,
+                                "time": "23:59"
+                            },
+                            "id": 43762620,
+                            "reservationStatus": "APPROVED",
+                            "start": {
+                                "terminal": false,
+                                "time": "00:00"
+                            },
+                            "unavailabilityReason": "RESERVATION"
+                        }
+                    ]
+                },
+                {
+                    "date": "2025-05-22",
+                    "defaultPrice": {
+                        "price": {
+                            "amount": 70.00,
+                            "currencyCode": "USD"
+                        },
+                        "source": "DYNAMIC"
+                    },
+                    "price": {
+                        "price": {
+                            "amount": 70.00,
+                            "currencyCode": "USD"
+                        },
+                        "source": "OWNER"
+                    },
+                    "priceEditable": false,
+                    "unavailabilities": [
+                        {
+                            "end": {
+                                "terminal": false,
+                                "time": "23:59"
+                            },
+                            "id": 43762620,
+                            "reservationStatus": "APPROVED",
+                            "start": {
+                                "terminal": false,
+                                "time": "00:00"
+                            },
+                            "unavailabilityReason": "RESERVATION"
+                        }
+                    ]
+                },
+                {
+                    "date": "2025-05-23",
+                    "defaultPrice": {
+                        "price": {
+                            "amount": 87.00,
+                            "currencyCode": "USD"
+                        },
+                        "source": "DYNAMIC"
+                    },
+                    "price": {
+                        "price": {
+                            "amount": 87.00,
+                            "currencyCode": "USD"
+                        },
+                        "source": "OWNER"
+                    },
+                    "priceEditable": false,
+                    "unavailabilities": [
+                        {
+                            "end": {
+                                "terminal": false,
+                                "time": "23:59"
+                            },
+                            "id": 43762620,
+                            "reservationStatus": "APPROVED",
+                            "start": {
+                                "terminal": false,
+                                "time": "00:00"
+                            },
+                            "unavailabilityReason": "RESERVATION"
+                        }
+                    ]
+                },
+                {
+                    "date": "2025-05-24",
+                    "defaultPrice": {
+                        "price": {
+                            "amount": 97.00,
+                            "currencyCode": "USD"
+                        },
+                        "source": "DYNAMIC"
+                    },
+                    "price": {
+                        "price": {
+                            "amount": 97.00,
+                            "currencyCode": "USD"
+                        },
+                        "source": "OWNER"
+                    },
+                    "priceEditable": false,
+                    "unavailabilities": [
+                        {
+                            "end": {
+                                "terminal": false,
+                                "time": "23:59"
+                            },
+                            "id": 43762620,
+                            "reservationStatus": "APPROVED",
+                            "start": {
+                                "terminal": false,
+                                "time": "00:00"
+                            },
+                            "unavailabilityReason": "RESERVATION"
+                        }
+                    ]
+                },
+                {
+                    "date": "2025-05-25",
+                    "defaultPrice": {
+                        "price": {
+                            "amount": 88.00,
+                            "currencyCode": "USD"
+                        },
+                        "source": "DYNAMIC"
+                    },
+                    "price": {
+                        "price": {
+                            "amount": 88.00,
+                            "currencyCode": "USD"
+                        },
+                        "source": "OWNER"
+                    },
+                    "priceEditable": true,
+                    "unavailabilities": [
+                        {
+                            "end": {
+                                "terminal": true,
+                                "time": "09:30"
+                            },
+                            "id": 43762620,
+                            "reservationStatus": "APPROVED",
+                            "start": {
+                                "terminal": false,
+                                "time": "00:00"
+                            },
+                            "unavailabilityReason": "RESERVATION"
+                        }
+                    ]
+                },
+                {
+                    "date": "2025-05-26",
+                    "price": {
+                        "price": {
+                            "amount": 68.00,
+                            "currencyCode": "USD"
+                        },
+                        "source": "DYNAMIC"
+                    },
+                    "priceEditable": true,
+                    "unavailabilities": []
+                },
+                {
+                    "date": "2025-05-27",
+                    "price": {
+                        "price": {
+                            "amount": 63.00,
+                            "currencyCode": "USD"
+                        },
+                        "source": "DYNAMIC"
+                    },
+                    "priceEditable": true,
+                    "unavailabilities": []
+                },
+                {
+                    "date": "2025-05-28",
+                    "price": {
+                        "price": {
+                            "amount": 63.00,
+                            "currencyCode": "USD"
+                        },
+                        "source": "DYNAMIC"
+                    },
+                    "priceEditable": true,
+                    "unavailabilities": []
+                },
+                {
+                    "date": "2025-05-29",
+                    "price": {
+                        "price": {
+                            "amount": 70.00,
+                            "currencyCode": "USD"
+                        },
+                        "source": "DYNAMIC"
+                    },
+                    "priceEditable": true,
+                    "unavailabilities": []
+                },
+                {
+                    "date": "2025-05-30",
+                    "price": {
+                        "price": {
+                            "amount": 81.00,
+                            "currencyCode": "USD"
+                        },
+                        "source": "DYNAMIC"
+                    },
+                    "priceEditable": true,
+                    "unavailabilities": []
+                },
+                {
+                    "date": "2025-05-31",
+                    "price": {
+                        "price": {
+                            "amount": 83.00,
+                            "currencyCode": "USD"
+                        },
+                        "source": "DYNAMIC"
+                    },
+                    "priceEditable": true,
+                    "unavailabilities": []
+                }
+            ],
+            "vehicleDetails": {
+                "apSupported": true,
+                "id": 3087894,
+                "image": {
+                    "darkModeImageUrl": null,
+                    "id": 21526237,
+                    "originalImageUrl": "https://images.turo.com/media/vehicle/images/PetVZU7PQ9mnTlghvorbAw.jpg",
+                    "placeholder": false,
+                    "resizableUrlTemplate": "https://images.turo.com/media/vehicle/images/PetVZU7PQ9mnTlghvorbAw.{width}x{height}.jpg",
+                    "thumbnails": {
+                        "170x125": "https://images.turo.com/media/vehicle/images/PetVZU7PQ9mnTlghvorbAw.170x102.jpg",
+                        "170x102": "https://images.turo.com/media/vehicle/images/PetVZU7PQ9mnTlghvorbAw.170x102.jpg",
+                        "620x372": "https://images.turo.com/media/vehicle/images/PetVZU7PQ9mnTlghvorbAw.620x372.jpg",
+                        "574x343": "https://images.turo.com/media/vehicle/images/PetVZU7PQ9mnTlghvorbAw.620x372.jpg",
+                        "50x30": "https://images.turo.com/media/vehicle/images/PetVZU7PQ9mnTlghvorbAw.50x30.jpg",
+                        "100x60": "https://images.turo.com/media/vehicle/images/PetVZU7PQ9mnTlghvorbAw.100x60.jpg"
+                    },
+                    "verified": false
+                },
+                "insightsSupported": true,
+                "licensePlate": "9EBC443",
+                "make": "Chrysler",
+                "marketCurrency": {
+                    "currencyCode": "USD",
+                    "decimalPlaces": 2,
+                    "defaultFractionDigits": 2,
+                    "symbol": "$"
+                },
+                "model": "Pacifica",
+                "name": "PUNIT's Chrysler",
+                "priceChartSupported": true,
+                "trim": "Hybrid Limited",
+                "vehicleTimeZone": "America/Los_Angeles",
+                "year": 2020
+            }
+        }
+    ],
+    "fleetCalendarDto": {
+        "daysPerPage": 31,
+        "includeVehicleDetails": true,
+        "startDate": "2025-05-01",
+        "vehicleIds": [
+            3087894
+        ]
+    }
+}

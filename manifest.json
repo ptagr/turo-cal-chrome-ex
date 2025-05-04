@@ -1,0 +1,34 @@
+{
+  "manifest_version": 3,
+  "name": "Turo Calendar Sync",
+  "version": "1.0",
+  "description": "Sync Turo vehicle calendars to Google Calendar.",
+  "permissions": [
+    "identity",
+    "scripting",
+    "activeTab"
+  ],
+  "host_permissions": [
+    "https://turo.com/*",
+    "https://www.googleapis.com/*"
+  ],
+  "oauth2": {
+    "client_id": "307642340111-o2fk52ftf6j1v8rtt7b557734run31om.apps.googleusercontent.com",
+    "scopes": [
+      "https://www.googleapis.com/auth/calendar"
+    ]
+  },
+  "action": {
+    "default_popup": "popup.html"
+  },
+  "background": {
+    "service_worker": "background.js"
+  },
+  "content_scripts": [
+    {
+      "matches": ["https://turo.com/us/en/trips/calendar*"],
+      "js": ["content.js"],
+      "run_at": "document_idle"
+    }
+  ]
+}
